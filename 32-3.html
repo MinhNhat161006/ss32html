@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đếm số lần bấm</title>
+</head>
+<body>
+
+    <input type="text" id="myInput" placeholder="Nhập tên mon học" />
+    <button class="addBtn">Thêm môn học</button>
+
+    <ul id="myUL"></ul>
+
+    <script>
+        const employees = [
+          { id: 1, task: " Toan"},
+          { id: 2, task: " Ly"},
+          { id: 3, task: " Hoa" }
+        ];
+    
+        const ulEl = document.getElementById("myUL");
+    
+        function renderTasks() {
+          let html = '';
+          for (let i = 0; i < employees.length; i++) {
+            html += `<li>${i+1}. ${employees[i].task}</li>`;
+          }
+          ulEl.innerHTML = html;
+        }
+    
+        renderTasks();
+    
+        document.querySelector(".addBtn").addEventListener("click", function () {
+          let inputValue = document.getElementById("myInput").value;
+          if (inputValue === '') {
+            alert("Bạn phải nhập nội dung!");
+          } else {
+              let number = ulEl.children.length + 1;
+        let li = document.createElement("li");
+        li.textContent = `${number}. ${inputValue}`;
+
+        ulEl.appendChild(li);
+            document.getElementById("myInput").value = "";
+          }
+        });
+  </script>
+
+</body>
+</html>

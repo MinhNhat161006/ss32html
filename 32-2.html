@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đếm số lần bấm</title>
+</head>
+<body>
+
+  <button id="myButton">Bấm vào tôi</button>
+  <p>Số lần đã bấm: <span id="count">0</span></p>
+
+  <script>
+    let count = 0; 
+    let button = document.getElementById("myButton");
+    let countDisplay = document.getElementById("count");
+
+    button.addEventListener("click", function () {
+      count++;
+      countDisplay.innerText = count;
+    });
+  </script>
+
+</body>
+</html>

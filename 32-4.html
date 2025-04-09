@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đếm số lần bấm</title>
+</head>
+<body>
+
+        <input type ="email" name = "email" placeholder="Nhập email" />
+        <button onclick = "checkemail">Check</button>
+        
+  <script>
+    function checkemail () {
+        let email = document.querySelector("input[name=email]").value;
+        let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (regex.test(email)) {
+            alert("Email hợp lệ");
+        } else {
+            alert("Email không hợp lệ");
+        }
+    }
+  </script>
+
+
+</body>
+</html>
