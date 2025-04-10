@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress Bar</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    h2 {
+      color: #555;
+    }
+
+    .progress-container {
+      width: 80%;
+      max-width: 500px;
+      height: 30px;
+      background-color: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px auto;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 40%; /* mặc định 40% như ảnh */
+      background-color: #a8d5a5;
+      transition: width 0.3s ease;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      background-color: #79aef1;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5d97e3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Progress Bar with Background Effect</h2>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <button onclick="changeProgress(10)">Tăng tiến trình</button>
+  <button onclick="changeProgress(-10)">Giảm tiến trình</button>
+
+  <script>
+    let progress = 40; // khởi đầu là 40%
+
+    function changeProgress(amount) {
+      progress += amount;
+      if (progress > 100) progress = 100;
+      if (progress < 0) progress = 0;
+      document.getElementById('progressBar').style.width = progress + '%';
+    }
+  </script>
+
+</body>
+</html>
